@@ -1,0 +1,42 @@
+/* ============================================================
+   SERGIO GALAVIZ — Design Tokens
+   Single source of truth for all CSS custom properties.
+   Import this file in any stylesheet that needs access to tokens.
+   ============================================================ */
+
+:root {
+  /* ── Background scale ─────────────────────────────────────── */
+  --black:   #020704;
+  --deep:    #050f08;
+  --panel:   #0a1a0f;
+  --glass:   #0d2014;
+  --g0:      #001a05;
+
+  /* ── Phosphor green scale ─────────────────────────────────── */
+  --g1:      #00ff6a;   /* primary / brightest */
+  --g2:      #00c952;   /* secondary */
+  --g3:      #00783a;   /* muted text */
+  --g4:      #004d26;   /* very muted / labels */
+  --g5:      #003018;   /* borders / dividers */
+
+  /* ── Accent colours ───────────────────────────────────────── */
+  --amber:   #ffb700;
+  --red:     #ff2244;   /* reserved for error / alert states */
+
+  /* ── Utility ──────────────────────────────────────────────── */
+  --dim:              rgba(0, 255, 106, 0.12);
+
+  /* ── CRT overlay opacities ────────────────────────────────── */
+  --overlay-scanline: rgba(0, 0, 0, 0.18);
+  --overlay-vignette: rgba(0, 0, 0, 0.6);
+
+  /* ── Green glow helpers ───────────────────────────────────── */
+  --glow-sm: 0 0 6px rgba(0, 255, 106, 0.6);
+  --glow-md: 0 0 14px rgba(0, 255, 106, 0.5), 0 0 30px rgba(0, 255, 106, 0.2);
+  --glow-lg: 0 0 20px rgba(0, 255, 106, 0.7), 0 0 60px rgba(0, 255, 106, 0.3),
+             0 0 100px rgba(0, 255, 106, 0.1);
+
+  /* ── Amber glow helpers ───────────────────────────────────── */
+  --glow-amber-sm: 0 0 6px rgba(255, 183, 0, 0.7);
+  --glow-amber-md: 0 0 14px rgba(255, 183, 0, 0.6);
+}

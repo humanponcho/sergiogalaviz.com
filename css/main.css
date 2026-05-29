@@ -3,41 +3,13 @@
    Style: 80s Concept Car Dashboard / Phosphor Green CRT
    ============================================================ */
 
+@import 'tokens.css';
+
 /* ── RESET ─────────────────────────────────────────────────── */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-/* ── DESIGN TOKENS ─────────────────────────────────────────── */
-:root {
-  /* Background scale */
-  --black:   #020704;
-  --deep:    #050f08;
-  --panel:   #0a1a0f;
-  --glass:   #0d2014;
-  --g0:      #001a05;
-
-  /* Phosphor green scale */
-  --g1:      #00ff6a;   /* primary / brightest */
-  --g2:      #00c952;   /* secondary */
-  --g3:      #00783a;   /* muted text */
-  --g4:      #004d26;   /* very muted / labels */
-  --g5:      #003018;   /* borders / dividers */
-
-  /* Accent colours */
-  --amber:   #ffb700;
-  --red:     #ff2244;
-
-  /* Utility */
-  --dim:     rgba(0, 255, 106, 0.12);
-
-  /* Glow helpers */
-  --glow-sm: 0 0 6px rgba(0, 255, 106, 0.6);
-  --glow-md: 0 0 14px rgba(0, 255, 106, 0.5), 0 0 30px rgba(0, 255, 106, 0.2);
-  --glow-lg: 0 0 20px rgba(0, 255, 106, 0.7), 0 0 60px rgba(0, 255, 106, 0.3),
-             0 0 100px rgba(0, 255, 106, 0.1);
 }
 
 /* ── BASE ──────────────────────────────────────────────────── */
@@ -61,8 +33,8 @@ body::before {
     to bottom,
     transparent,
     transparent 2px,
-    rgba(0, 0, 0, 0.18) 2px,
-    rgba(0, 0, 0, 0.18) 4px
+    var(--overlay-scanline) 2px,
+    var(--overlay-scanline) 4px
   );
 }
 
@@ -70,7 +42,7 @@ body::before {
 body::after {
   content: '';
   position: fixed; inset: 0; z-index: 998; pointer-events: none;
-  background: radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, 0.6) 100%);
+  background: radial-gradient(ellipse at center, transparent 50%, var(--overlay-vignette) 100%);
 }
 
 /* Noise texture overlay */
@@ -135,7 +107,7 @@ body::after {
 
 .status-dot.amber::before {
   background: var(--amber);
-  box-shadow: 0 0 6px rgba(255, 183, 0, 0.7);
+  box-shadow: var(--glow-amber-sm);
   animation-delay: 0.8s;
 }
 
@@ -214,7 +186,7 @@ body::after {
 }
 
 .widget-value.small  { font-size: 14px; }
-.widget-value.amber  { color: var(--amber); text-shadow: 0 0 14px rgba(255, 183, 0, 0.6); }
+.widget-value.amber  { color: var(--amber); text-shadow: var(--glow-amber-md); }
 
 .widget-sub {
   font-size: 9px;
@@ -255,10 +227,12 @@ body::after {
 .bar-fill {
   position: absolute; top: 0; left: 0; bottom: 0;
   background: var(--g2);
-  box-shadow: 0 0 6px rgba(0, 255, 106, 0.5);
+  box-shadow: var(--glow-sm);
   transform-origin: left;
   animation: barIn 1.2s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
+
+.bar-fill--primary { background: var(--g1); }
 
 .bar-pct {
   font-size: 8px;
@@ -306,7 +280,7 @@ body::after {
   width: 100%; height: 1px;
   background: linear-gradient(90deg, transparent, var(--g2), var(--g2), transparent);
   margin: 18px 0;
-  box-shadow: 0 0 10px rgba(0, 255, 106, 0.4);
+  box-shadow: var(--glow-sm);
   animation: fadeUp 1s ease both 0.5s;
 }
 
@@ -370,7 +344,7 @@ body::after {
 .nav-link:hover {
   border-color: var(--g2);
   color: var(--g1);
-  box-shadow: var(--glow-md), inset 0 0 20px rgba(0, 255, 106, 0.05);
+  box-shadow: var(--glow-md), inset 0 0 20px var(--dim);
   text-shadow: var(--glow-sm);
 }
 
@@ -385,8 +359,12 @@ body::after {
     linear-gradient(var(--g0) 1px, transparent 1px),
     linear-gradient(90deg, var(--g0) 1px, transparent 1px);
   background-size: 48px 48px;
+  -webkit-mask-image: radial-gradient(ellipse at center, transparent 30%, black 80%);
   mask-image: radial-gradient(ellipse at center, transparent 30%, black 80%);
 }
+
+/* ── PANEL-RIGHT BAR GRAPH SPACING ─────────────────────────── */
+.panel-right .bar-graph { margin-top: 10px; }
 
 /* ── TICKER ────────────────────────────────────────────────── */
 .ticker-wrap { overflow: hidden; flex: 1; }

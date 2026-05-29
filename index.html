@@ -6,6 +6,9 @@
   <meta name="description" content="Sergio Galaviz — Full-Stack Developer, Builder, Problem Solver." />
   <title>SERGIO GALAVIZ</title>
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -103,23 +106,11 @@
           </svg>
           Contact
         </a>
-        <a class="nav-link" href="https://github.com/humanponcho-kshop" target="_blank" rel="noopener">
+        <a class="nav-link" href="https://github.com/humanponcho" target="_blank" rel="noopener">
           <svg class="nav-link-icon" viewBox="0 0 16 16" fill="currentColor">
             <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.54 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
           </svg>
           GitHub
-        </a>
-        <a class="nav-link" href="https://linkedin.com/in/sergiogalaviz" target="_blank" rel="noopener">
-          <svg class="nav-link-icon" viewBox="0 0 16 16" fill="currentColor">
-            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
-          </svg>
-          LinkedIn
-        </a>
-        <a class="nav-link" href="#" target="_blank" rel="noopener">
-          <svg class="nav-link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M2 4h12M2 8h8M2 12h10"/>
-          </svg>
-          Résumé
         </a>
       </nav>
     </div>
@@ -142,25 +133,25 @@
             </defs>
             <!-- Track -->
             <path d="M10 64 A50 50 0 0 1 110 64"
-              fill="none" stroke="#003018" stroke-width="6" stroke-linecap="round"/>
+              fill="none" style="stroke: var(--g5)" stroke-width="6" stroke-linecap="round"/>
             <!-- Fill — 82% -->
             <path d="M10 64 A50 50 0 0 1 110 64"
-              fill="none" stroke="#00c952" stroke-width="6"
+              fill="none" stroke-width="6"
               stroke-dasharray="157" stroke-dashoffset="28"
               stroke-linecap="round" filter="url(#glow)"
-              style="animation: gaugeIn 1.4s cubic-bezier(0.23,1,0.32,1) both 0.4s"/>
+              style="stroke: var(--g2); animation: gaugeIn 1.4s cubic-bezier(0.23,1,0.32,1) both 0.4s"/>
             <!-- Tick marks -->
-            <g stroke="#003018" stroke-width="1">
+            <g style="stroke: var(--g5)" stroke-width="1">
               <line x1="60"  y1="14" x2="60"  y2="20"/>
               <line x1="15"  y1="47" x2="20"  y2="44"/>
               <line x1="105" y1="47" x2="100" y2="44"/>
             </g>
             <text x="60" y="52" text-anchor="middle"
               font-family="Orbitron,sans-serif" font-size="18" font-weight="700"
-              fill="#00ff6a" filter="url(#glow)">82</text>
+              style="fill: var(--g1)" filter="url(#glow)">82</text>
             <text x="60" y="63" text-anchor="middle"
               font-family="Share Tech Mono,monospace" font-size="7"
-              fill="#004d26" letter-spacing="2">COMMIT RATE</text>
+              style="fill: var(--g4)" letter-spacing="2">COMMIT RATE</text>
           </svg>
         </div>
       </div>
@@ -169,15 +160,14 @@
         <div class="widget-label">// CURRENT PROJECT</div>
         <div class="widget-value small">KSHOP-V01</div>
         <div class="widget-sub">E-Commerce Platform</div>
-        <div style="margin-top:10px;">
+        <div class="bar-graph">
           <div class="bar-row">
             <div class="bar-label">Deploy</div>
             <div class="bar-track">
-              <div class="bar-fill" style="width:95%;background:var(--g1);animation-delay:.1s"></div>
+              <div class="bar-fill bar-fill--primary" style="width:95%;animation-delay:.1s"></div>
             </div>
             <div class="bar-pct">95</div>
           </div>
-          <div style="height:6px"></div>
           <div class="bar-row">
             <div class="bar-label">Tests</div>
             <div class="bar-track">
