@@ -40,12 +40,15 @@ const coordEl = document.getElementById('coords');
 let hasGeo = false;
 
 if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(pos => {
-    hasGeo = true;
-    const lat = pos.coords.latitude.toFixed(2);
-    const lng = pos.coords.longitude.toFixed(2);
-    coordEl.textContent = `LAT ${lat}° · LNG ${lng}°`;
-  });
+  navigator.geolocation.getCurrentPosition(
+    pos => {
+      hasGeo = true;
+      const lat = pos.coords.latitude.toFixed(2);
+      const lng = pos.coords.longitude.toFixed(2);
+      coordEl.textContent = `LAT ${lat}° · LNG ${lng}°`;
+    },
+    () => { /* permission denied — mousemove fallback takes over immediately */ }
+  );
 }
 
 // Mouse-mapped coordinates shown until real geo is available

@@ -74,7 +74,7 @@ body::after {
 }
 
 .top-bar .unit {
-  font-size: 10px;
+  font-size: clamp(9px, 1.5vw, 10px);
   color: var(--g3);
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -92,7 +92,7 @@ body::after {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 9px;
+  font-size: clamp(8px, 1.4vw, 9px);
   letter-spacing: 0.12em;
   color: var(--g3);
 }
@@ -179,7 +179,7 @@ body::after {
 
 .widget-value {
   font-family: 'Orbitron', sans-serif;
-  font-size: 22px; font-weight: 700;
+  font-size: clamp(16px, 3.5vw, 22px); font-weight: 700;
   color: var(--g1);
   text-shadow: var(--glow-md);
   line-height: 1;
@@ -243,12 +243,12 @@ body::after {
 
 /* ── GAUGE ARC ─────────────────────────────────────────────── */
 .gauge-wrap { display: flex; justify-content: center; padding: 4px 0 0; }
-.gauge-svg  { overflow: visible; }
+.gauge-svg  { overflow: visible; width: min(120px, 100%); height: auto; }
 
 /* ── CLOCK ─────────────────────────────────────────────────── */
 .clock-display {
   font-family: 'Orbitron', sans-serif;
-  font-size: 28px; font-weight: 900;
+  font-size: clamp(20px, 5.5vw, 28px); font-weight: 900;
   color: var(--g1);
   text-shadow: var(--glow-lg);
   letter-spacing: 0.06em;
@@ -286,7 +286,7 @@ body::after {
 
 .hero-tagline {
   font-family: 'Rajdhani', sans-serif;
-  font-size: clamp(11px, 1.2vw, 14px); font-weight: 300;
+  font-size: clamp(11px, 2.5vw, 14px); font-weight: 300;
   color: var(--g3);
   letter-spacing: 0.35em;
   text-transform: uppercase;
@@ -423,16 +423,38 @@ body::after {
 .panel-right > *:nth-child(2) { animation: fadeUp 0.8s ease both 0.35s; }
 .panel-right > *:nth-child(3) { animation: fadeUp 0.8s ease both 0.50s; }
 
-/* ── RESPONSIVE ────────────────────────────────────────────── */
-@media (max-width: 780px) {
+/* ── RESPONSIVE — TABLET (600px – 899px) ───────────────────── */
+@media (max-width: 899px) {
   html, body { overflow: auto; }
 
   .cockpit {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto auto;
-    overflow-y: auto;
+    grid-template-columns: 160px 1fr 160px;
     height: auto;
     min-height: 100vh;
+    padding: 16px;
+  }
+
+  .panel-left, .panel-right { gap: 10px; }
+
+  .widget { padding: 10px 12px; }
+
+  .bar-label { width: 40px; }
+
+  .status-row { gap: 12px; }
+
+  .hero-rule { margin: 12px 0; }
+
+  .nav-links { margin-top: 20px; }
+}
+
+/* ── RESPONSIVE — MOBILE (≤ 599px) ─────────────────────────── */
+@media (max-width: 599px) {
+  .cockpit {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    height: auto;
+    min-height: 100vh;
+    padding: 12px;
   }
 
   .panel-left, .panel-right {
@@ -441,13 +463,28 @@ body::after {
     border: none;
     border-top: 1px solid var(--g5);
     padding: 16px 0 0;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 10px;
   }
 
   .panel-left .widget,
-  .panel-right .widget { flex: 1; min-width: 140px; }
+  .panel-right .widget { width: 100%; }
 
   .center { grid-column: 1; grid-row: 2; padding: 20px 0; }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-link { justify-content: center; }
+
+  /* Drop the third status dot — keeps header lean on small screens */
+  .status-dot:nth-child(3) { display: none; }
+
+  .status-row { flex-wrap: wrap; gap: 8px; }
+
+  .ticker-wrap { display: none; }
+
+  .bottom-bar { gap: 0; }
 }
