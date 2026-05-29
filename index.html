@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sergio Galaviz — Full-Stack Developer, Builder, Problem Solver." />
+  <title>SERGIO GALAVIZ</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+  <!-- CRT noise overlay -->
+  <div class="noise"></div>
+
+  <div class="cockpit">
+
+    <!-- ── TOP BAR ── -->
+    <div class="top-bar">
+      <div class="unit">
+        SYS <span>SG-01</span> // PERSONAL UNIT // <span id="uptime">00:00:00</span>
+      </div>
+      <div class="status-row">
+        <div class="status-dot">ONLINE</div>
+        <div class="status-dot amber">OPEN TO WORK</div>
+        <div class="status-dot">SYSTEMS NOMINAL</div>
+      </div>
+    </div>
+
+    <!-- ── LEFT PANEL ── -->
+    <div class="panel-left">
+
+      <div class="widget">
+        <div class="widget-label">// CLOCK</div>
+        <div class="clock-display" id="clock">--:--:--</div>
+        <div class="clock-date"    id="datestr">--- -- ----</div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-label">// LOCATION</div>
+        <div class="widget-value small">MEX CITY</div>
+        <div class="widget-sub">19°N · 99°W · UTC-6</div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-label">// STACK · PROFICIENCY</div>
+        <div class="bar-graph">
+          <div class="bar-row">
+            <div class="bar-label">React</div>
+            <div class="bar-track"><div class="bar-fill" style="width:92%;animation-delay:.1s"></div></div>
+            <div class="bar-pct">92</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Node.js</div>
+            <div class="bar-track"><div class="bar-fill" style="width:88%;animation-delay:.2s"></div></div>
+            <div class="bar-pct">88</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Postgres</div>
+            <div class="bar-track"><div class="bar-fill" style="width:80%;animation-delay:.3s"></div></div>
+            <div class="bar-pct">80</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">DevOps</div>
+            <div class="bar-track"><div class="bar-fill" style="width:74%;animation-delay:.4s"></div></div>
+            <div class="bar-pct">74</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Design</div>
+            <div class="bar-track"><div class="bar-fill" style="width:68%;animation-delay:.5s"></div></div>
+            <div class="bar-pct">68</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-label">// AVAILABILITY</div>
+        <div class="widget-value amber">OPEN</div>
+        <div class="widget-sub">Freelance · Full-time</div>
+      </div>
+
+    </div>
+
+    <!-- ── CENTER ── -->
+    <div class="center">
+      <div class="grid-bg"></div>
+
+      <div class="hero-name">Sergio Galaviz</div>
+      <div class="hero-rule"></div>
+      <div class="hero-tagline">Full-Stack Developer &nbsp;·&nbsp; Builder &nbsp;·&nbsp; Problem Solver</div>
+
+      <nav class="nav-links">
+        <a class="nav-link" href="mailto:hello@sergiogalaviz.com">
+          <svg class="nav-link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="1" y="3" width="14" height="10" rx="1"/>
+            <path d="M1 4l7 5 7-5"/>
+          </svg>
+          Contact
+        </a>
+        <a class="nav-link" href="https://github.com/humanponcho-kshop" target="_blank" rel="noopener">
+          <svg class="nav-link-icon" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.54 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+          </svg>
+          GitHub
+        </a>
+        <a class="nav-link" href="https://linkedin.com/in/sergiogalaviz" target="_blank" rel="noopener">
+          <svg class="nav-link-icon" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+          </svg>
+          LinkedIn
+        </a>
+        <a class="nav-link" href="#" target="_blank" rel="noopener">
+          <svg class="nav-link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M2 4h12M2 8h8M2 12h10"/>
+          </svg>
+          Résumé
+        </a>
+      </nav>
+    </div>
+
+    <!-- ── RIGHT PANEL ── -->
+    <div class="panel-right">
+
+      <div class="widget">
+        <div class="widget-label">// SIGNAL · ACTIVITY</div>
+        <div class="gauge-wrap">
+          <svg class="gauge-svg" width="120" height="68" viewBox="0 0 120 68">
+            <defs>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="2.5" result="blur"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+            <!-- Track -->
+            <path d="M10 64 A50 50 0 0 1 110 64"
+              fill="none" stroke="#003018" stroke-width="6" stroke-linecap="round"/>
+            <!-- Fill — 82% -->
+            <path d="M10 64 A50 50 0 0 1 110 64"
+              fill="none" stroke="#00c952" stroke-width="6"
+              stroke-dasharray="157" stroke-dashoffset="28"
+              stroke-linecap="round" filter="url(#glow)"
+              style="animation: gaugeIn 1.4s cubic-bezier(0.23,1,0.32,1) both 0.4s"/>
+            <!-- Tick marks -->
+            <g stroke="#003018" stroke-width="1">
+              <line x1="60"  y1="14" x2="60"  y2="20"/>
+              <line x1="15"  y1="47" x2="20"  y2="44"/>
+              <line x1="105" y1="47" x2="100" y2="44"/>
+            </g>
+            <text x="60" y="52" text-anchor="middle"
+              font-family="Orbitron,sans-serif" font-size="18" font-weight="700"
+              fill="#00ff6a" filter="url(#glow)">82</text>
+            <text x="60" y="63" text-anchor="middle"
+              font-family="Share Tech Mono,monospace" font-size="7"
+              fill="#004d26" letter-spacing="2">COMMIT RATE</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-label">// CURRENT PROJECT</div>
+        <div class="widget-value small">KSHOP-V01</div>
+        <div class="widget-sub">E-Commerce Platform</div>
+        <div style="margin-top:10px;">
+          <div class="bar-row">
+            <div class="bar-label">Deploy</div>
+            <div class="bar-track">
+              <div class="bar-fill" style="width:95%;background:var(--g1);animation-delay:.1s"></div>
+            </div>
+            <div class="bar-pct">95</div>
+          </div>
+          <div style="height:6px"></div>
+          <div class="bar-row">
+            <div class="bar-label">Tests</div>
+            <div class="bar-track">
+              <div class="bar-fill" style="width:89%;animation-delay:.2s"></div>
+            </div>
+            <div class="bar-pct">89</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-label">// MODE</div>
+        <div class="widget-value small">BUILDER</div>
+        <div class="widget-sub">Full-Stack &amp; Infrastructure</div>
+      </div>
+
+    </div>
+
+    <!-- ── BOTTOM BAR ── -->
+    <div class="bottom-bar">
+      <div class="coords" id="coords">LAT -- · LNG --</div>
+      <div class="ticker-wrap">
+        <div class="ticker">
+          <span>React</span> · <span>Vite</span> · <span>Node.js</span> · <span>Express</span> ·
+          <span>Prisma</span> · <span>PostgreSQL</span> · <span>Docker</span> · <span>Vercel</span> ·
+          <span>Cloudflare</span> · <span>AWS S3</span> · <span>Stripe</span> · <span>Redis</span> ·
+          <span>GitHub Actions</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span>React</span> · <span>Vite</span> · <span>Node.js</span> · <span>Express</span> ·
+          <span>Prisma</span> · <span>PostgreSQL</span> · <span>Docker</span> · <span>Vercel</span> ·
+          <span>Cloudflare</span> · <span>AWS S3</span> · <span>Stripe</span> · <span>Redis</span> ·
+          <span>GitHub Actions</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+      </div>
+      <div class="unit">VER <span>1.0.0</span></div>
+    </div>
+
+  </div><!-- /.cockpit -->
+
+  <script src="js/main.js"></script>
+</body>
+</html>
